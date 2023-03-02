@@ -1,0 +1,18 @@
+version: "3.0"
+services:
+  database:
+    container_name: "chimall-database-dev"
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: "chimall"
+      MYSQL_USER: "chimall"
+      MYSQL_PASSWORD: "password"
+      MYSQL_ROOT_PASSWORD: "password"
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+      - "33060:33060"
+    expose:
+      - "3306"
+      - "33060"
