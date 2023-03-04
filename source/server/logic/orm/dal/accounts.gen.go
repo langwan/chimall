@@ -31,6 +31,7 @@ func newAccount(db *gorm.DB, opts ...gen.DOOption) account {
 	_account.Phone = field.NewString(tableName, "phone")
 	_account.Nickname = field.NewString(tableName, "nickname")
 	_account.Password = field.NewString(tableName, "password")
+	_account.Salt = field.NewString(tableName, "salt")
 
 	_account.fillFieldMap()
 
@@ -45,6 +46,7 @@ type account struct {
 	Phone    field.String // 电话
 	Nickname field.String // 昵称
 	Password field.String // 密码
+	Salt     field.String // 盐值
 
 	fieldMap map[string]field.Expr
 }
@@ -65,6 +67,7 @@ func (a *account) updateTableName(table string) *account {
 	a.Phone = field.NewString(table, "phone")
 	a.Nickname = field.NewString(table, "nickname")
 	a.Password = field.NewString(table, "password")
+	a.Salt = field.NewString(table, "salt")
 
 	a.fillFieldMap()
 
@@ -81,11 +84,12 @@ func (a *account) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 }
 
 func (a *account) fillFieldMap() {
-	a.fieldMap = make(map[string]field.Expr, 4)
+	a.fieldMap = make(map[string]field.Expr, 5)
 	a.fieldMap["id"] = a.ID
 	a.fieldMap["phone"] = a.Phone
 	a.fieldMap["nickname"] = a.Nickname
 	a.fieldMap["password"] = a.Password
+	a.fieldMap["salt"] = a.Salt
 }
 
 func (a account) clone(db *gorm.DB) account {

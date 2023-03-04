@@ -2,7 +2,7 @@ package server
 
 import (
 	"github.com/gin-gonic/gin"
-	"net/http"
+	"server/service/h"
 )
 
 type LogoutRequest struct {
@@ -12,5 +12,6 @@ type LogoutResponse struct {
 }
 
 func Logout(c *gin.Context) {
-	c.String(http.StatusOK, "hello login")
+	h.RemoveCookie(c, "token")
+	h.Ok(c, "ok")
 }

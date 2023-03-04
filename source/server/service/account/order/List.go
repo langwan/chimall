@@ -24,7 +24,7 @@ func List(c *gin.Context) {
 	req := ListRequest{}
 	c.ShouldBindJSON(&req)
 
-	fmt.Println(req)
+	fmt.Println(c.Get("token"))
 
 	//SQL QUERY
 	resp := ListResponse{}
