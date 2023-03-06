@@ -16,7 +16,7 @@ import (
 type RegisterRequest struct {
 	Phone    string `json:"phone" binding:"required,len=11" label:"手机号"`
 	Password string `json:"password" binding:"required,len=40" label:"密码"`
-	Nickname string `json:"nickname" binding:"required,min=6,max=32" label:"昵称"`
+	Nickname string `json:"nickname" binding:"required,min=2,max=32" label:"昵称"`
 }
 
 type RegisterResponse struct {
