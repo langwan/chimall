@@ -4,6 +4,7 @@ import hashPassword from "Helper/password";
 import { useSnackbar } from "notistack";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useUser } from 'hooks/useUser'
 export default function Register() {
   let navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
@@ -12,27 +13,23 @@ export default function Register() {
     nickname: "",
     password: "",
   });
-  const [errors, setErrors] = useState({});
   const onChange = async (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
+
+  const [_, {
+    register,
+    errors,
+  }] = useUser()
   return (
     <form
       onSubmit={async (event) => {
         event.stopPropagation();
         event.preventDefault();
-
-        try {
-          let hp = hashPassword(values.password);
-          let vals = { ...values, password: hp };
-          let resp = await apiRequest.post("/api/v1/register", vals);
+        const err = await register(values)
+        if (!err) {
           enqueueSnackbar("注册成功", { variant: "success" });
-          setErrors({});
           navigate("/");
-        } catch (error) {
-          if (error.response.status === 422) {
-            setErrors(error.response.data);
-          }
         }
       }}
     >
@@ -43,7 +40,7 @@ export default function Register() {
         justifyContent="flex-start"
       >
         <TextField
-          error={errors.Phone}
+          error={!!errors.Phone}
           helperText={errors.Phone}
           onChange={onChange}
           placeholder="手机号"
@@ -51,7 +48,7 @@ export default function Register() {
           value={values.phone}
         />
         <TextField
-          error={errors.Nickname}
+          error={!!errors.Nickname}
           helperText={errors.Nickname}
           name="nickname"
           placeholder="昵称"
@@ -59,7 +56,7 @@ export default function Register() {
           value={values.nickname}
         />
         <TextField
-          error={errors.Password}
+          error={!!errors.Password}
           helperText={errors.Password}
           name="password"
           type="password"

@@ -4,6 +4,7 @@ import { enableMapSet } from "immer";
 import { SnackbarProvider } from "notistack";
 import { Fragment } from "react";
 import ReactDOM from "react-dom/client";
+import { RecoilRoot } from 'recoil'
 import "./Sass/index.scss";
 enableMapSet();
 
@@ -20,7 +21,9 @@ root.render(
       TransitionComponent={Slide}
     >
       <CssBaseline />
-      <App />
+      <RecoilRoot>
+        <App />
+      </RecoilRoot>
     </SnackbarProvider>
   </Fragment>
 );
