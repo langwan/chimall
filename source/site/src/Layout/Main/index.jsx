@@ -1,21 +1,11 @@
 import { Box, Link, Stack } from "@mui/material";
-import { apiRequest } from "Helper/axios";
-import cookies from "js-cookie";
-import jwtDecode from "jwt-decode";
-import { Fragment, useEffect, useState } from "react";
+import { useUser } from "hooks/useUser";
+import { Fragment } from "react";
 import { Outlet } from "react-router";
 export default function MainLayout() {
-  const [account, setAccount] = useState(null);
-
-  useEffect(() => {
-    let tokenString = cookies.get("token");
-
-    if (!!tokenString) {
-      let jwtToken = jwtDecode(tokenString);
-      setAccount(jwtToken);
-    }
-  }, []);
-
+  const [userInfo, {
+    logout,
+  }] = useUser()
   return (
     <Box sx={{ width: "100%", height: "100%" }}>
       <Stack
@@ -25,21 +15,17 @@ export default function MainLayout() {
         spacing={1}
         direction="row"
       >
-        {account && (
+        {userInfo.isLogin ? (
           <Fragment>
-            欢迎您，<Link href={"/r/login"}>{account.nickname}</Link>
+            欢迎您，<Link href={"/r/login"}>{userInfo.nickname}</Link>
             <Link
               sx={{ cursor: "pointer" }}
-              onClick={async (event) => {
-                await apiRequest.post("/api/v1/logout");
-                setAccount(null);
-              }}
+              onClick={logout}
             >
               退出
             </Link>
           </Fragment>
-        )}
-        {account == null && (
+        ) : (
           <Fragment>
             <Link href={"/r/login"}>登录</Link>
             <Link href={"/r/register"}>注册</Link>
