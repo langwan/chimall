@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	serviceAccount "server/service/account/account"
+	serviceGoods "server/service/account/goods"
 	serviceOrder "server/service/account/order"
 	"server/service/h"
 	"server/service/server"
@@ -21,6 +22,10 @@ func Router(g *gin.Engine) {
 
 	account := v1.Group("/account")
 	account.Use(h.Auth())
+
+	goods := account.Group("/goods")
+	goods.GET("/homepage", serviceGoods.Homepage)
+	goods.GET("/get", serviceGoods.Get)
 	order := account.Group("/order")
 	order.POST("/list", serviceOrder.List)
 	order.POST("/get", serviceOrder.Get)

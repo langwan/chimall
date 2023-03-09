@@ -2,6 +2,7 @@ package serviceOrder
 
 import (
 	"errors"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	h "server/service/h"
 )
@@ -11,6 +12,7 @@ type GetRequest struct {
 }
 
 func Get(c *gin.Context) {
+	fmt.Println("order get function")
 	var req GetRequest
 	c.ShouldBindJSON(&req)
 

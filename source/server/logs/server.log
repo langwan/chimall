@@ -1,0 +1,125 @@
+[GIN-debug] POST   /api/v1/login             --> server/service/server.Login (5 handlers)
+[GIN-debug] POST   /api/v1/register          --> server/service/server.Register (5 handlers)
+[GIN-debug] POST   /api/v1/logout            --> server/service/server.Logout (5 handlers)
+[GIN-debug] POST   /api/v1/account/order/list --> server/service/account/order.List (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/get --> server/service/account/order.Get (6 handlers)
+[GIN-debug] POST   /api/v1/account/profile   --> server/service/account/account.Profile (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :3003
+[GIN] 2023/03/09 - 14:40:03 | 200 |   11.140583ms |       127.0.0.1 | POST     "/api/v1/login"
+[GIN-debug] POST   /api/v1/login             --> server/service/server.Login (5 handlers)
+[GIN-debug] POST   /api/v1/register          --> server/service/server.Register (5 handlers)
+[GIN-debug] POST   /api/v1/logout            --> server/service/server.Logout (5 handlers)
+[GIN-debug] POST   /api/v1/account/order/list --> server/service/account/order.List (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/get --> server/service/account/order.Get (6 handlers)
+[GIN-debug] POST   /api/v1/account/profile   --> server/service/account/account.Profile (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :3003
+[GIN-debug] POST   /api/v1/login             --> server/service/server.Login (5 handlers)
+[GIN-debug] POST   /api/v1/register          --> server/service/server.Register (5 handlers)
+[GIN-debug] POST   /api/v1/logout            --> server/service/server.Logout (5 handlers)
+[GIN-debug] GET    /api/v1/account/goods/homepage --> server/service/account/goods.Homepage (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/list --> server/service/account/order.List (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/get --> server/service/account/order.Get (6 handlers)
+[GIN-debug] POST   /api/v1/account/profile   --> server/service/account/account.Profile (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :3003
+[GIN-debug] POST   /api/v1/login             --> server/service/server.Login (5 handlers)
+[GIN-debug] POST   /api/v1/register          --> server/service/server.Register (5 handlers)
+[GIN-debug] POST   /api/v1/logout            --> server/service/server.Logout (5 handlers)
+[GIN-debug] GET    /api/v1/account/goods/homepage --> server/service/account/goods.Homepage (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/list --> server/service/account/order.List (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/get --> server/service/account/order.Get (6 handlers)
+[GIN-debug] POST   /api/v1/account/profile   --> server/service/account/account.Profile (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :3003
+[GIN] 2023/03/09 - 20:20:19 | 404 |         375ns |             ::1 | GET      "/api/v1/homepage"
+[GIN] 2023/03/09 - 20:21:54 | 200 |    21.65025ms |             ::1 | GET      "/api/v1/account/goods/homepage"
+[GIN-debug] POST   /api/v1/login             --> server/service/server.Login (5 handlers)
+[GIN-debug] POST   /api/v1/register          --> server/service/server.Register (5 handlers)
+[GIN-debug] POST   /api/v1/logout            --> server/service/server.Logout (5 handlers)
+[GIN-debug] GET    /api/v1/account/goods/homepage --> server/service/account/goods.Homepage (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/list --> server/service/account/order.List (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/get --> server/service/account/order.Get (6 handlers)
+[GIN-debug] POST   /api/v1/account/profile   --> server/service/account/account.Profile (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :3003
+[GIN] 2023/03/09 - 20:22:14 | 200 |   11.704875ms |             ::1 | GET      "/api/v1/account/goods/homepage"
+[GIN-debug] POST   /api/v1/login             --> server/service/server.Login (5 handlers)
+[GIN-debug] POST   /api/v1/register          --> server/service/server.Register (5 handlers)
+[GIN-debug] POST   /api/v1/logout            --> server/service/server.Logout (5 handlers)
+[GIN-debug] GET    /api/v1/account/goods/homepage --> server/service/account/goods.Homepage (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/list --> server/service/account/order.List (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/get --> server/service/account/order.Get (6 handlers)
+[GIN-debug] POST   /api/v1/account/profile   --> server/service/account/account.Profile (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :3003
+[GIN-debug] POST   /api/v1/login             --> server/service/server.Login (5 handlers)
+[GIN-debug] POST   /api/v1/register          --> server/service/server.Register (5 handlers)
+[GIN-debug] POST   /api/v1/logout            --> server/service/server.Logout (5 handlers)
+[GIN-debug] GET    /api/v1/account/goods/homepage --> server/service/account/goods.Homepage (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/list --> server/service/account/order.List (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/get --> server/service/account/order.Get (6 handlers)
+[GIN-debug] POST   /api/v1/account/profile   --> server/service/account/account.Profile (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :3003
+[GIN] 2023/03/09 - 21:00:58 | 200 |   34.794458ms |             ::1 | GET      "/api/v1/account/goods/homepage"
+[GIN] 2023/03/09 - 21:02:35 | 500 |   39.107583ms |             ::1 | GET      "/api/v1/account/goods/homepage"
+[GIN-debug] POST   /api/v1/login             --> server/service/server.Login (5 handlers)
+[GIN-debug] POST   /api/v1/register          --> server/service/server.Register (5 handlers)
+[GIN-debug] POST   /api/v1/logout            --> server/service/server.Logout (5 handlers)
+[GIN-debug] GET    /api/v1/account/goods/homepage --> server/service/account/goods.Homepage (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/list --> server/service/account/order.List (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/get --> server/service/account/order.Get (6 handlers)
+[GIN-debug] POST   /api/v1/account/profile   --> server/service/account/account.Profile (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :3003
+[GIN-debug] POST   /api/v1/login             --> server/service/server.Login (5 handlers)
+[GIN-debug] POST   /api/v1/register          --> server/service/server.Register (5 handlers)
+[GIN-debug] POST   /api/v1/logout            --> server/service/server.Logout (5 handlers)
+[GIN-debug] GET    /api/v1/account/goods/homepage --> server/service/account/goods.Homepage (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/list --> server/service/account/order.List (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/get --> server/service/account/order.Get (6 handlers)
+[GIN-debug] POST   /api/v1/account/profile   --> server/service/account/account.Profile (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :3003
+[GIN] 2023/03/09 - 21:03:23 | 200 |   23.029666ms |             ::1 | GET      "/api/v1/account/goods/homepage"
+[GIN-debug] POST   /api/v1/login             --> server/service/server.Login (5 handlers)
+[GIN-debug] POST   /api/v1/register          --> server/service/server.Register (5 handlers)
+[GIN-debug] POST   /api/v1/logout            --> server/service/server.Logout (5 handlers)
+[GIN-debug] GET    /api/v1/account/goods/homepage --> server/service/account/goods.Homepage (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/list --> server/service/account/order.List (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/get --> server/service/account/order.Get (6 handlers)
+[GIN-debug] POST   /api/v1/account/profile   --> server/service/account/account.Profile (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :3003
+[GIN] 2023/03/09 - 21:05:49 | 200 |   38.717833ms |             ::1 | GET      "/api/v1/account/goods/homepage"
+[GIN] 2023/03/09 - 21:11:43 | 200 |   27.812541ms |             ::1 | GET      "/api/v1/account/goods/homepage"
+[GIN] 2023/03/09 - 21:13:08 | 200 |    9.853875ms |             ::1 | GET      "/api/v1/account/goods/homepage"
+[GIN] 2023/03/09 - 21:14:24 | 200 |   22.738291ms |             ::1 | GET      "/api/v1/account/goods/homepage"
+[GIN] 2023/03/09 - 21:21:08 | 200 |     24.0025ms |             ::1 | GET      "/api/v1/account/goods/homepage"
+[GIN-debug] POST   /api/v1/login             --> server/service/server.Login (5 handlers)
+[GIN-debug] POST   /api/v1/register          --> server/service/server.Register (5 handlers)
+[GIN-debug] POST   /api/v1/logout            --> server/service/server.Logout (5 handlers)
+[GIN-debug] GET    /api/v1/account/goods/homepage --> server/service/account/goods.Homepage (6 handlers)
+[GIN-debug] GET    /api/v1/account/goods/get --> server/service/account/goods.Get (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/list --> server/service/account/order.List (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/get --> server/service/account/order.Get (6 handlers)
+[GIN-debug] POST   /api/v1/account/profile   --> server/service/account/account.Profile (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :3003
+[GIN] 2023/03/09 - 21:38:50 | 200 |   30.973625ms |             ::1 | GET      "/api/v1/account/goods/get"
+[GIN] 2023/03/09 - 21:40:09 | 200 |    16.78575ms |             ::1 | GET      "/api/v1/account/goods/get"
+[GIN] 2023/03/09 - 21:40:15 | 400 |   24.264042ms |             ::1 | GET      "/api/v1/account/goods/get"
+[GIN] 2023/03/09 - 21:40:20 | 200 |   24.795959ms |             ::1 | GET      "/api/v1/account/goods/get"

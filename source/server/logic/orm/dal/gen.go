@@ -18,17 +18,23 @@ import (
 var (
 	Q       = new(Query)
 	Account *account
+	Block   *block
+	Good    *good
 )
 
 func SetDefault(db *gorm.DB, opts ...gen.DOOption) {
 	*Q = *Use(db, opts...)
 	Account = &Q.Account
+	Block = &Q.Block
+	Good = &Q.Good
 }
 
 func Use(db *gorm.DB, opts ...gen.DOOption) *Query {
 	return &Query{
 		db:      db,
 		Account: newAccount(db, opts...),
+		Block:   newBlock(db, opts...),
+		Good:    newGood(db, opts...),
 	}
 }
 
@@ -36,6 +42,8 @@ type Query struct {
 	db *gorm.DB
 
 	Account account
+	Block   block
+	Good    good
 }
 
 func (q *Query) Available() bool { return q.db != nil }
@@ -44,6 +52,8 @@ func (q *Query) clone(db *gorm.DB) *Query {
 	return &Query{
 		db:      db,
 		Account: q.Account.clone(db),
+		Block:   q.Block.clone(db),
+		Good:    q.Good.clone(db),
 	}
 }
 
@@ -59,16 +69,22 @@ func (q *Query) ReplaceDB(db *gorm.DB) *Query {
 	return &Query{
 		db:      db,
 		Account: q.Account.replaceDB(db),
+		Block:   q.Block.replaceDB(db),
+		Good:    q.Good.replaceDB(db),
 	}
 }
 
 type queryCtx struct {
 	Account *accountDo
+	Block   *blockDo
+	Good    *goodDo
 }
 
 func (q *Query) WithContext(ctx context.Context) *queryCtx {
 	return &queryCtx{
 		Account: q.Account.WithContext(ctx),
+		Block:   q.Block.WithContext(ctx),
+		Good:    q.Good.WithContext(ctx),
 	}
 }
 
