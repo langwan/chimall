@@ -123,3 +123,21 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 [GIN] 2023/03/09 - 21:40:09 | 200 |    16.78575ms |             ::1 | GET      "/api/v1/account/goods/get"
 [GIN] 2023/03/09 - 21:40:15 | 400 |   24.264042ms |             ::1 | GET      "/api/v1/account/goods/get"
 [GIN] 2023/03/09 - 21:40:20 | 200 |   24.795959ms |             ::1 | GET      "/api/v1/account/goods/get"
+[GIN-debug] POST   /api/v1/login             --> server/service/server.Login (5 handlers)
+[GIN-debug] POST   /api/v1/register          --> server/service/server.Register (5 handlers)
+[GIN-debug] POST   /api/v1/logout            --> server/service/server.Logout (5 handlers)
+[GIN-debug] GET    /api/v1/account/goods/homepage --> server/service/account/goods.Homepage (6 handlers)
+[GIN-debug] GET    /api/v1/account/goods/get --> server/service/account/goods.Get (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/list --> server/service/account/order.List (6 handlers)
+[GIN-debug] POST   /api/v1/account/order/get --> server/service/account/order.Get (6 handlers)
+[GIN-debug] POST   /api/v1/account/profile   --> server/service/account/account.Profile (6 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :3003
+[GIN] 2023/03/10 - 00:41:27 | 404 |         542ns |       127.0.0.1 | POST     "/api/api/v1/register"
+[GIN] 2023/03/10 - 00:41:35 | 200 |  176.955375ms |       127.0.0.1 | POST     "/api/v1/register"
+[GIN] 2023/03/10 - 00:46:43 | 200 |   36.911584ms |       127.0.0.1 | POST     "/api/v1/login"
+[GIN] 2023/03/10 - 00:49:42 | 200 |   38.950458ms |       127.0.0.1 | POST     "/api/v1/login"
+[GIN] 2023/03/10 - 00:58:21 | 200 |   35.242625ms |       127.0.0.1 | POST     "/api/v1/login"
+[GIN] 2023/03/10 - 00:59:48 | 200 |   35.778875ms |       127.0.0.1 | POST     "/api/v1/login"
+[GIN] 2023/03/10 - 01:00:04 | 200 |     13.3455ms |       127.0.0.1 | POST     "/api/v1/login"

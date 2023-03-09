@@ -9,6 +9,7 @@ require (
 	github.com/go-playground/universal-translator v0.18.1
 	github.com/go-playground/validator/v10 v10.11.2
 	github.com/langwan/langgo v0.5.53
+	github.com/shopspring/decimal v1.3.1
 	github.com/spf13/viper v1.15.0
 	gorm.io/driver/mysql v1.4.3
 	gorm.io/gen v0.3.21
@@ -38,7 +39,6 @@ require (
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.6 // indirect
 	github.com/satori/go.uuid v1.2.0 // indirect
-	github.com/shopspring/decimal v1.3.1 // indirect
 	github.com/spf13/afero v1.9.3 // indirect
 	github.com/spf13/cast v1.5.0 // indirect
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
