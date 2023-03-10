@@ -12,6 +12,15 @@ type GetRequest struct {
 	Id string `json:"id"`
 }
 
+type GoodRes struct {
+	Id            string `json:"id"`
+	Name          string `json:"name"`
+	Price         string `json:"price"`
+	OriginalPrice string `json:"originalPrice"`
+	Img           string `json:"img"`
+	Dest          string `json:"dest"`
+}
+
 func Get(c *gin.Context) {
 	var req GetRequest
 	c.ShouldBindJSON(&req)
@@ -25,7 +34,7 @@ func Get(c *gin.Context) {
 		return
 	}
 
-	h.Ok(c, &HomepageFeed{
+	h.Ok(c, &GoodRes{
 		Id:            goods.ID,
 		Name:          goods.Name,
 		Price:         goods.Price.String(),
