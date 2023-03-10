@@ -25,3 +25,16 @@ interface UserStorageMapping {
   user: UserInfoState
   token: string
 }
+
+interface HomeGoodRes {
+  id: string
+  name: string
+  price: string
+  originalPrice: string
+  img: string
+  dest: string
+}
+
+interface HomePageRes {
+  blocks: Record<string, HomeGoodRes[]>
+}

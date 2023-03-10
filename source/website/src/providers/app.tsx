@@ -5,7 +5,13 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
 
-import { Button, CircularProgress, Slide, CssBaseline } from "@mui/material";
+import {
+  Button,
+  CircularProgress,
+  Slide,
+  CssBaseline,
+  Backdrop,
+} from "@mui/material";
 import { queryClient } from "@/lib/react-query";
 
 const ErrorFallback = () => {
@@ -34,7 +40,12 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     <React.Suspense
       fallback={
         <div className="flex items-center justify-center w-screen h-screen">
-          <CircularProgress />
+          <Backdrop
+            sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+            open
+          >
+            <CircularProgress />
+          </Backdrop>
         </div>
       }
     >

@@ -22,9 +22,7 @@ export const userState = atom({
       onSet((value) => {
         if (value instanceof DefaultValue) {
           userStorage.remove('user')
-          console.log('remove')
         } else {
-          console.log('set')
           userStorage.set('user', value)
         }
       })

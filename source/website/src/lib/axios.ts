@@ -1,24 +1,25 @@
+import { userStorage } from '@/store';
 import Axios, { InternalAxiosRequestConfig } from 'axios'
 import { enqueueSnackbar } from 'notistack';
 
 function authRequestInterceptor(config: InternalAxiosRequestConfig) {
-  // const token = storage.getToken();
-  // if (token) {
-  //   config.headers.authorization = `${token}`;
-  // }
+  const token = userStorage.get('token');
+  if (token) {
+    config.headers.authorization = `${token}`;
+  }
 
   config.headers.Accept = 'application/json';
   return config;
 }
 
 export const axios = Axios.create({
-  // baseURL: "/api",
+  baseURL: "/api/v1",
 });
 
 axios.interceptors.request.use(authRequestInterceptor);
 axios.interceptors.response.use(
   (response) => {
-    return response.data;
+    return response.data.body;
   },
   (error) => {
     const { response } = error

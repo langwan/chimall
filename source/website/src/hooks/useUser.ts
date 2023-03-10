@@ -8,7 +8,7 @@ import jwtDecode from "jwt-decode";
 
 export const useUser = () => {
   const [userInfo, setUserInfo] = useRecoilState(userState)
-  const resetUser = useResetRecoilState(userState)
+  // const resetUser = useResetRecoilState(userState)
   const [errors, setErrors] = useState<UserReqError>({})
 
 
@@ -34,7 +34,11 @@ export const useUser = () => {
   }
 
   const logout = () => {
-    resetUser()
+    setUserInfo({
+      nickname: '',
+      uid: '',
+      isLogin: false,
+    })
   }
 
   const register = async ({ phone, password, nickname }: Register) => {
