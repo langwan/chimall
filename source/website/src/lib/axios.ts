@@ -1,4 +1,5 @@
 import Axios, { InternalAxiosRequestConfig } from 'axios'
+import { enqueueSnackbar } from 'notistack';
 
 function authRequestInterceptor(config: InternalAxiosRequestConfig) {
   // const token = storage.getToken();
@@ -20,6 +21,10 @@ axios.interceptors.response.use(
     return response.data;
   },
   (error) => {
+    const { response } = error
+    if (response && response.data && response.data.code === -1) {
+      enqueueSnackbar(response.data.message, { variant: "error" });
+    }
     return Promise.reject(error);
   }
 );

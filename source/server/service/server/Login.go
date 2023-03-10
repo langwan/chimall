@@ -1,8 +1,10 @@
 package server
 
 import (
+	"errors"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
+	"gorm.io/gorm"
 	"server/logic/orm/dal"
 	logicPassword "server/logic/password"
 	logicToken "server/logic/token"
@@ -27,7 +29,10 @@ func Login(c *gin.Context) {
 	}
 
 	acc, err := dal.Account.Where(dal.Account.Phone.Eq(request.Phone)).First()
-	if err != nil {
+	if err != nil && errors.Is(err, gorm.ErrRecordNotFound) {
+		h.FailMessage(c, "账号不存在")
+		return
+	} else if err != nil {
 		h.Fail(c, err)
 		return
 	}
