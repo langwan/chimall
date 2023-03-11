@@ -5,6 +5,7 @@ import (
 	serviceAccount "server/service/account/account"
 	serviceGoods "server/service/account/goods"
 	serviceOrder "server/service/account/order"
+	serviceApp "server/service/app/home"
 	"server/service/h"
 	"server/service/server"
 )
@@ -20,11 +21,15 @@ func Router(g *gin.Engine) {
 		v1.POST("/logout", server.Logout)
 	}
 
+	app := v1.Group("/app")
+	{
+		app.GET("/home", serviceApp.Home)
+	}
+
 	account := v1.Group("/account")
 	account.Use(h.Auth())
 
 	goods := account.Group("/goods")
-	goods.GET("/homepage", serviceGoods.Homepage)
 	goods.GET("/get", serviceGoods.Get)
 	order := account.Group("/order")
 	order.POST("/list", serviceOrder.List)

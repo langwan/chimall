@@ -36,6 +36,7 @@ func newGood(db *gorm.DB, opts ...gen.DOOption) good {
 	_good.CreatedAt = field.NewTime(tableName, "created_at")
 	_good.UpdatedAt = field.NewTime(tableName, "updated_at")
 	_good.DeletedAt = field.NewField(tableName, "deleted_at")
+	_good.SwiperImg = field.NewString(tableName, "swiper_img")
 
 	_good.fillFieldMap()
 
@@ -55,6 +56,7 @@ type good struct {
 	CreatedAt     field.Time
 	UpdatedAt     field.Time
 	DeletedAt     field.Field
+	SwiperImg     field.String
 
 	fieldMap map[string]field.Expr
 }
@@ -80,6 +82,7 @@ func (g *good) updateTableName(table string) *good {
 	g.CreatedAt = field.NewTime(table, "created_at")
 	g.UpdatedAt = field.NewTime(table, "updated_at")
 	g.DeletedAt = field.NewField(table, "deleted_at")
+	g.SwiperImg = field.NewString(table, "swiper_img")
 
 	g.fillFieldMap()
 
@@ -96,7 +99,7 @@ func (g *good) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 }
 
 func (g *good) fillFieldMap() {
-	g.fieldMap = make(map[string]field.Expr, 9)
+	g.fieldMap = make(map[string]field.Expr, 10)
 	g.fieldMap["id"] = g.ID
 	g.fieldMap["name"] = g.Name
 	g.fieldMap["img"] = g.Img
@@ -106,6 +109,7 @@ func (g *good) fillFieldMap() {
 	g.fieldMap["created_at"] = g.CreatedAt
 	g.fieldMap["updated_at"] = g.UpdatedAt
 	g.fieldMap["deleted_at"] = g.DeletedAt
+	g.fieldMap["swiper_img"] = g.SwiperImg
 }
 
 func (g good) clone(db *gorm.DB) good {
