@@ -20,7 +20,6 @@ var (
 	Account *account
 	Block   *block
 	Good    *good
-	Slide   *slide
 )
 
 func SetDefault(db *gorm.DB, opts ...gen.DOOption) {
@@ -28,7 +27,6 @@ func SetDefault(db *gorm.DB, opts ...gen.DOOption) {
 	Account = &Q.Account
 	Block = &Q.Block
 	Good = &Q.Good
-	Slide = &Q.Slide
 }
 
 func Use(db *gorm.DB, opts ...gen.DOOption) *Query {
@@ -37,7 +35,6 @@ func Use(db *gorm.DB, opts ...gen.DOOption) *Query {
 		Account: newAccount(db, opts...),
 		Block:   newBlock(db, opts...),
 		Good:    newGood(db, opts...),
-		Slide:   newSlide(db, opts...),
 	}
 }
 
@@ -47,7 +44,6 @@ type Query struct {
 	Account account
 	Block   block
 	Good    good
-	Slide   slide
 }
 
 func (q *Query) Available() bool { return q.db != nil }
@@ -58,7 +54,6 @@ func (q *Query) clone(db *gorm.DB) *Query {
 		Account: q.Account.clone(db),
 		Block:   q.Block.clone(db),
 		Good:    q.Good.clone(db),
-		Slide:   q.Slide.clone(db),
 	}
 }
 
@@ -76,7 +71,6 @@ func (q *Query) ReplaceDB(db *gorm.DB) *Query {
 		Account: q.Account.replaceDB(db),
 		Block:   q.Block.replaceDB(db),
 		Good:    q.Good.replaceDB(db),
-		Slide:   q.Slide.replaceDB(db),
 	}
 }
 
@@ -84,7 +78,6 @@ type queryCtx struct {
 	Account *accountDo
 	Block   *blockDo
 	Good    *goodDo
-	Slide   *slideDo
 }
 
 func (q *Query) WithContext(ctx context.Context) *queryCtx {
@@ -92,7 +85,6 @@ func (q *Query) WithContext(ctx context.Context) *queryCtx {
 		Account: q.Account.WithContext(ctx),
 		Block:   q.Block.WithContext(ctx),
 		Good:    q.Good.WithContext(ctx),
-		Slide:   q.Slide.WithContext(ctx),
 	}
 }
 

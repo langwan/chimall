@@ -11,7 +11,7 @@
  Target Server Version : 80032 (8.0.32)
  File Encoding         : 65001
 
- Date: 11/03/2023 00:10:22
+ Date: 11/03/2023 17:50:00
 */
 
 SET NAMES utf8mb4;
@@ -56,6 +56,9 @@ INSERT INTO `blocks` (`key`, `goods_id`) VALUES ('pc', '1');
 INSERT INTO `blocks` (`key`, `goods_id`) VALUES ('pc', '2');
 INSERT INTO `blocks` (`key`, `goods_id`) VALUES ('phone', '2');
 INSERT INTO `blocks` (`key`, `goods_id`) VALUES ('phone', '3');
+INSERT INTO `blocks` (`key`, `goods_id`) VALUES ('slides', '1');
+INSERT INTO `blocks` (`key`, `goods_id`) VALUES ('slides', '2');
+INSERT INTO `blocks` (`key`, `goods_id`) VALUES ('slides', '3');
 COMMIT;
 
 -- ----------------------------
@@ -83,24 +86,6 @@ BEGIN;
 INSERT INTO `goods` (`id`, `name`, `img`, `price`, `original_price`, `desc`, `created_at`, `updated_at`, `deleted_at`, `swiper_img`) VALUES ('1', 'Redmi 12C', 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1672368924.0631125.png', 699.99, 799.99, '高性能长续航，5000万像素超清双摄，全新多彩配色', '2023-03-09 21:02:15.000', '2023-03-09 21:02:13.000', NULL, 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5ee39da0bc802e61046ef16524deb326.jpg?thumb=1&w=1226&h=460&f=webp&q=90');
 INSERT INTO `goods` (`id`, `name`, `img`, `price`, `original_price`, `desc`, `created_at`, `updated_at`, `deleted_at`, `swiper_img`) VALUES ('2', 'Redmi 12C', 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1672368924.0631125.png', 699.00, 799.00, '高性能长续航，5000万像素超清双摄，全新多彩配色', '2023-03-09 21:02:15.000', '2023-03-09 21:02:13.000', NULL, 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0b7e5c1fd6c74380d4d6c7036490e46f.jpg?thumb=1&w=1226&h=460&f=webp&q=90');
 INSERT INTO `goods` (`id`, `name`, `img`, `price`, `original_price`, `desc`, `created_at`, `updated_at`, `deleted_at`, `swiper_img`) VALUES ('3', 'Redmi 12C', 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1672368924.0631125.png', 699.00, 799.00, '高性能长续航，5000万像素超清双摄，全新多彩配色', '2023-03-09 21:02:15.000', '2023-03-09 21:02:13.000', NULL, NULL);
-COMMIT;
-
--- ----------------------------
--- Table structure for slides
--- ----------------------------
-DROP TABLE IF EXISTS `slides`;
-CREATE TABLE `slides` (
-  `goods_id` varchar(255) NOT NULL,
-  PRIMARY KEY (`goods_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- ----------------------------
--- Records of slides
--- ----------------------------
-BEGIN;
-INSERT INTO `slides` (`goods_id`) VALUES ('1');
-INSERT INTO `slides` (`goods_id`) VALUES ('2');
-INSERT INTO `slides` (`goods_id`) VALUES ('3');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;

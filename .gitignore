@@ -2,4 +2,4 @@ source/server/.idea
 .idea
 docker/data
 source/site/node_modules
-logs/*.log
+*.log

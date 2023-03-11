@@ -5,7 +5,7 @@ import (
 	serviceAccount "server/service/account/account"
 	serviceGoods "server/service/account/goods"
 	serviceOrder "server/service/account/order"
-	serviceHome "server/service/app/home"
+	serviceApp "server/service/app/home"
 	"server/service/h"
 	"server/service/server"
 )
@@ -23,7 +23,7 @@ func Router(g *gin.Engine) {
 
 	app := v1.Group("/app")
 	{
-		app.GET("/home", serviceHome.Home)
+		app.GET("/home", serviceApp.Home)
 	}
 
 	account := v1.Group("/account")

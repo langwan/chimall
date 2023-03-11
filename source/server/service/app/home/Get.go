@@ -1,4 +1,4 @@
-package serviceHome
+package serviceApp
 
 import (
 	"github.com/gin-gonic/gin"
@@ -20,28 +20,24 @@ func Home(c *gin.Context) {
 		return
 	}
 
-	banners, err := dal.Slide.Find()
-	if err != nil {
-		return
-	}
-
 	resp := HomeResponse{
 		Blocks:  make(map[string][]*serviceGoods.GoodRes),
 		Banners: make([]string, 0, 4),
 	}
 
 	var blockIds []string
-	var bannerIds []string
+	var slideIds []string
 
 	for _, block := range blocks {
-		blockIds = append(blockIds, block.GoodsID)
+
+		if block.Key == "slides" {
+			slideIds = append(slideIds, block.GoodsID)
+		} else {
+			blockIds = append(blockIds, block.GoodsID)
+		}
 	}
 
-	for _, banner := range banners {
-		bannerIds = append(bannerIds, banner.GoodsID)
-	}
-
-	ids := helper.RemoveDuplicateInt64(append(blockIds, bannerIds...))
+	ids := helper.RemoveDuplicateInt64(append(blockIds, slideIds...))
 
 	items, err := dal.Good.Where(dal.Good.ID.In(ids...)).Find()
 
@@ -53,19 +49,21 @@ func Home(c *gin.Context) {
 
 	for _, block := range blocks {
 		if goods, ok := m[block.GoodsID]; ok {
-			resp.Blocks[block.Key] = append(resp.Blocks[block.Key], &serviceGoods.GoodRes{
-				Id:            goods.ID,
-				Name:          goods.Name,
-				Price:         goods.Price.String(),
-				OriginalPrice: goods.OriginalPrice.String(),
-				Img:           goods.Img,
-				Dest:          goods.Desc,
-			})
+			if block.Key != "slides" {
+				resp.Blocks[block.Key] = append(resp.Blocks[block.Key], &serviceGoods.GoodRes{
+					Id:            goods.ID,
+					Name:          goods.Name,
+					Price:         goods.Price.String(),
+					OriginalPrice: goods.OriginalPrice.String(),
+					Img:           goods.Img,
+					Dest:          goods.Desc,
+				})
+			}
 		}
 	}
 
-	for _, banner := range banners {
-		if goods, ok := m[banner.GoodsID]; ok {
+	for _, slideId := range slideIds {
+		if goods, ok := m[slideId]; ok {
 			if goods.SwiperImg != "" {
 				resp.Banners = append(resp.Banners, goods.SwiperImg)
 			}
