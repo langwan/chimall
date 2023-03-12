@@ -16,3 +16,13 @@ services:
     expose:
       - "3306"
       - "33060"
+  redis:
+    container_name: "chimall-redis-dev"
+    restart: always
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    expose:
+      - "6379"
+    volumes:
+      - ./redis:/data

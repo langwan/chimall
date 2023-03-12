@@ -1,0 +1,2 @@
+redis:
+  addr: "localhost:6379"

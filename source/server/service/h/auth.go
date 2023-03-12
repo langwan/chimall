@@ -1,7 +1,6 @@
 package h
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
 	logicToken "server/logic/token"
 )
@@ -19,6 +18,5 @@ func Auth() gin.HandlerFunc {
 			return
 		}
 		c.Set("token", token)
-		fmt.Println("auth function")
 	}
 }
