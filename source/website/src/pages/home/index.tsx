@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
 import { Hot } from "./components/Hot";
 
-export default function Home() {
+export default function HomePage() {
 
   const homeDataQuery = useQuery({
     queryKey: ["homeData"],

@@ -26,7 +26,7 @@ interface UserStorageMapping {
   token: string
 }
 
-interface HomeGoodRes {
+interface GoodRes {
   id: string
   name: string
   price: string
@@ -35,6 +35,11 @@ interface HomeGoodRes {
   dest: string
 }
 
+interface CartRes {
+  goodsId: string
+  numbers: number
+}
+
 interface HomePageRes {
-  blocks: Record<string, HomeGoodRes[]>
+  blocks: Record<string, GoodRes[]>
 }

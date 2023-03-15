@@ -1,8 +1,9 @@
 import MainLayout from '@/layout/main'
 import NoLayout from '@/layout/no-layout'
-import Home from '@/pages/home'
-import Login from '@/pages/login'
-import Register from '@/pages/register'
+import { GoodsPage } from '@/pages/goods'
+import HomePage from '@/pages/home'
+import LoginPage from '@/pages/login'
+import RegisterPage from '@/pages/register'
 import { RouteObject, useRoutes } from 'react-router-dom'
 
 const routes: RouteObject[] = [
@@ -12,7 +13,11 @@ const routes: RouteObject[] = [
     children: [
       {
         path: "/",
-        element: <Home />
+        element: <HomePage />
+      },
+      {
+        path: "/goods/:id",
+        element: <GoodsPage />
       }
     ]
   },
@@ -22,11 +27,11 @@ const routes: RouteObject[] = [
     children: [
       {
         path: 'login',
-        element: <Login />
+        element: <LoginPage />
       },
       {
         path: 'register',
-        element: <Register />
+        element: <RegisterPage />
       }
     ]
   }

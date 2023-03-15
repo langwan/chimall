@@ -3,8 +3,9 @@ import { useSnackbar } from "notistack";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUser } from '@/hooks/useUser'
-export default function Register() {
-  let navigate = useNavigate();
+
+export default function RegisterPage() {
+  const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
   const [values, setValues] = useState({
     phone: "",
@@ -66,7 +67,7 @@ export default function Register() {
         <Button type="submit" variant="contained">
           注册
         </Button>
-        <Button>登录</Button>
+        <Button onClick={() => navigate('/r/login')}>登录</Button>
       </Stack>
     </form>
   );

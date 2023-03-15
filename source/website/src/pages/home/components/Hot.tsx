@@ -5,7 +5,7 @@ import { Good } from "./Good";
 
 type Props = {
   title: string
-  data: HomeGoodRes[]
+  data: GoodRes[]
 }
 
 export const Hot: FC<Props> = memo(({ data, title }) => {

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUser } from '@/hooks/useUser'
 
-export default function Login() {
+export default function LoginPage() {
   let navigate = useNavigate();
 
   const [_, {

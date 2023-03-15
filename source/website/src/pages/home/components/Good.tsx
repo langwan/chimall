@@ -1,12 +1,21 @@
 import { Box, Stack, Typography } from "@mui/material"
-import { FC, memo } from "react"
+import { FC, memo, useCallback } from "react"
+import { useNavigate } from "react-router-dom"
 
 type Props = {
-  data: HomeGoodRes
+  data: GoodRes
 }
+
 export const Good: FC<Props> = memo(({ data }) => {
+
+  const navigate = useNavigate()
+
+  const onClick = useCallback(() => {
+    navigate('/goods/' + data.id)
+  }, [])
+
   return (
-    <Box bgcolor="white" textAlign="center" width="234px" height="300px" paddingX="20px" paddingY="15px">
+    <Box component="div" onClick={onClick} sx={{ cursor: "pointer" }} bgcolor="white" textAlign="center" width="234px" height="300px" paddingX="20px" paddingY="15px">
       <Box
         sx={{ width: 160, height: 160 }}
         component={"img"}
